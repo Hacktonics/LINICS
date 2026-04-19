@@ -391,7 +391,7 @@ A specific Python3 virtual environment has been set up under `/opt/venv`. Librar
 
 # What's different in LINICS 1.01 vs. LINICS 1.0
 
-We have fixed some bugs in [ZathrICS](#zathrics-by-hacktonics), a tool included within LINICS. You do not need to reinstall LINICS 1.01 to update the system. You can download [this update script](https://www.hacktonics.io/linics-downloads/update-linics1.0.sh) and run it. It will download the fixed version of Zathrics and replace the previous version. Note that you will need to make the script executable: `chmod a+x update-linics1.0.sh`. The script will ask for you to authorise sudo privileges.
+We have fixed some bugs in [ZathrICS](#zathrics-by-hacktonics), a tool included within LINICS. You do not need to reinstall LINICS 1.01 to update the system. You can download [this update script](https://www.hacktonics.io/linics-downloads/linics1_01/update-linics1.0.sh) and run it. It will download the fixed version of Zathrics and replace the previous version. Note that you will need to make the script executable: `chmod a+x update-linics1.0.sh`. The script will ask for you to authorise sudo privileges.
 
 # Known Issues
 

@@ -1,36 +1,53 @@
-# Release Notes for LINICS 1.01 (by [Hacktonics Ltd](https://hacktonics.io))
+# Release Notes for LINICS 1.5 (by [Hacktonics Ltd](https://hacktonics.io))
 
 LINICS is a **Lin**ux <sup>:registered:</sup> based platform for **ICS** (Industrial Control Systems) security professionals. LIN+ICS = LINICS. Linux <sup>:registered:</sup> is the registered trademark of Linus Torvalds in the U.S. and other countries.
 
-LINICS 1.01 is a Debian-based platform (specifically Debian 12 Bookworm). LINICS 1.01 is free software made available under the terms of the GNU General Public License 2.0. The license text is available at: [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html) and under `/usr/share/common-licenses/GPL-2`. Under the GPL license, you can redistribute it and/or modify it under the terms of the license.
+LINICS 1.5 is a Debian-based platform (specifically Debian 12 Bookworm). LINICS 1.5 is free software made available under the terms of the GNU General Public License 2.0. The license text is available at: [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html) and under `/usr/share/common-licenses/GPL-2`. Under the GPL license, you can redistribute it and/or modify it under the terms of the license.
 
 > Note: The GPL-2 license applies to the base operating system and a subset of the tools. Some of the included software has its own license terms which you should peruse before deciding to modify or redistribute it for any purpose.
 
-LINICS 1.01 is distributed as a helpful resource for ICS security professionals but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. As this software is for security researchers, it is to be used only for ethical research and investigations to support improvements in security of industrial control systems. 
-
-> Users of LINICS 1.0 can update without the need to reinstall. See [Instructions](#whats-different-in-linics-101-vs-linics-10)
+LINICS 1.5 is distributed as a helpful resource for ICS security professionals but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. As this software is for security researchers, it is to be used only for ethical research and investigations to support improvements in security of industrial control systems. 
 
 # Supported architectures
 
-LINICS 1.01 is available for 64-bit PC (AMD64) architectures. Currently, no ARM version is available. The distribution is available in ISO format as well as virtual machines for KVM, VMWare and VirtualBox. [For downloads, visit: https://hacktonics.io/linics/](https://hacktonics.io/linics/) 
+LINICS 1.5 is available for 64-bit PC (AMD64) architectures. Currently, no ARM version is available. The distribution is available in ISO format as well as virtual machines for KVM, VMWare and VirtualBox. [For downloads, visit: https://hacktonics.io/linics/](https://hacktonics.io/linics/) 
 
 # System requirements
 
 Recommended minimum system requirements: 4 GB RAM, 50 GB Hard Disk Space, 2 Processor Cores
 
-LINICS 1.01 works well with the above minimum requirements. You can run it with 2 GB RAM and 1 CPU core but performance will take a hit. While 30 GB disk space will work, you are likely to fill it up quickly as tools collect data.
-
 If your system has capacity, providing more RAM or cores is, of course, advised.
 
-# How to install LINICS 1.01
+# How to install LINICS 1.5
 
-You can install LINICS using the ISO image available at [https://hacktonics.io/linics/](https://hacktonics.io/linics/). It is a live image so you can boot it in a virtualisation platform of your choice. Once you reach the desktop of the live image, explore LINICS 1.01 (but do see [limitations of the live boot image](#dockerised-tools-and-live-boot)). On the desktop taskbar, there is a LINICS installer icon. This will take you to the Calamares installer which will guide you step-by-step. The installation is very straight forward especially if you are not manually partitioning disks.
+You can install LINICS using the ISO image available at [https://hacktonics.io/linics/](https://hacktonics.io/linics/). It is a live image so you can boot it in a virtualisation platform of your choice. Once you reach the desktop of the live image, explore LINICS 1.5 (but do see [limitations of the live boot image](#dockerised-tools-and-live-boot)). On the desktop taskbar, there is a LINICS installer icon. This will take you to the Calamares installer which will guide you step-by-step. The installation is very straight forward especially if you are not manually partitioning disks.
 
-You can also create a live boot USB stick using this ISO by using tools such as Etcher or Rufus. This can then be used to boot a machine where you are installing LINICS 1.01 and follow the same installation process above (but do see [bootloader issues](#bootloader-issues)).
+You can also create a live boot USB stick using this ISO by using tools such as Etcher or Rufus. This can then be used to boot a machine where you are installing LINICS 1.5 and follow the same installation process above (but do see [bootloader issues](#bootloader-issues)).
 
 Alternatively, you can download one of our pre-built VMs suitable for VMWare, Virtualbox or KVM. These are available at: [https://hacktonics.io/linics/](https://hacktonics.io/linics/).
 
-# Tools included in LINICS 1.01
+# What's new in LINICS 1.5 compared to LINICS 1.01
+
+In addition to incorporating some base Debian 12 updates and fixing some issues (e.g., with Metasploit GPG key), we have added two new tools: [BesterICS](#besterics-by-hacktonics), an Operational Technology (OT) Pentest Reporting tool, and [ProtanICS](#protanics-by-hacktonics), an OT Protocol Analyser. 
+
+# Tools included in LINICS 1.5
+
+
+## OT Pentest Reporting
+
+### BesterICS by Hacktonics
+
+#### About
+> "Be seeing you!" - Bester
+
+BesterICS is an OT Pentest Reporting Tool developed by Hacktonics Ltd specifically for LINICS. The tool provides an easy to use graphical interface for systematically capturing OT pentest outputs. The tool incorporates a list of all the tools within LINICS, mapped to MITRE ATT&CK for ICS. Findings and recommendations can be structured according to MITRE ATT&CK for ICS stages. Other key features include a heatmap of criticality by MITRE ATT&CK stage, summary of recommendations across stages and the capability to generate pentest reports for clients in Markdown and LaTeX formats.
+ 
+The tool is named after Bester, the Psi-cop from Babylon 5, as it provides the ability to represent key threats through OT pentest reports and recommendations on how to mitigate them.
+
+#### Usage 
+Launch BesterICS through the Applications Menu, via the LINICS launcher on the taskbar, or by typing "besterics" in a new terminal.
+
+Further instructions on usage are provided within the tool.
 
 ## Scanners
 
@@ -372,6 +389,21 @@ Bettercap is available at [https://www.bettercap.org/](https://www.bettercap.org
 
 ## Forensics
 
+### ProtanICS by Hacktonics
+
+#### About
+
+Protanics was built by Hacktanics to examine network captures.
+
+#### Usage 
+Launch ProtanICS through the Applications Menu, via the LINICS launcher on the taskbar, or by typing "protanics" in a new terminal.
+
+You will be asked to select a pcap file or json when opening. 
+
+ProtanICS uses Wireshark to process network captures before processing. On LINICS, you can select a pcap file directly and the tshark command line tool automatically processes selected pcaps. This will export a json file, which will be saved locally and used for future analysis. 
+
+If you already have the capture open in Wireshark, then go to "File"->"Export Packet Dissections" and select Json. On the dialog, make sure that "No Duplicate Keys" is selected.
+
 ### Volatility
 
 #### About
@@ -389,13 +421,9 @@ Usage documentation is available on the GitHub wiki at [https://github.com/volat
 
 A specific Python3 virtual environment has been set up under `/opt/venv`. Libraries such as `opcua`, `pycomm3`, `pymodbus`, `scapy`, `python-snap7` have been installed there. The PATH has been updated to look for Python there first. Shebangs of relevant scripts have been updated to specifically use that venv. So you will be able to work with these libraries directly without having to create your own virtual environment or activate this venv. You can, of course, activate it explicitly. You can also install additional libraries in that venv using sudo. Or you can use your own venv that you set up. However, do note that, for any scripts and libraries that any pre-installed software requires, the system will utilise /opt/venv. 
 
-# What's different in LINICS 1.01 vs. LINICS 1.0
-
-We have fixed some bugs in [ZathrICS](#zathrics-by-hacktonics), a tool included within LINICS. You do not need to reinstall LINICS 1.01 to update the system. You can download [this update script](https://www.hacktonics.io/linics-downloads/linics1_01/update-linics1.0.sh) and run it. It will download the fixed version of Zathrics and replace the previous version. Note that you will need to make the script executable: `chmod a+x update-linics1.0.sh`. The script will ask for you to authorise sudo privileges.
-
 # Known Issues
 
-> We advise to backup and make recovery media for any system where you are installing LINICS 1.01. We also advise running LINICS 1.01 in a hypervisor. VM downloads are provided for several virtualisation environments.
+> We advise to backup and make recovery media for any system where you are installing LINICS 1.5. We also advise running LINICS 1.5 in a hypervisor. VM downloads are provided for several virtualisation environments.
 
 ## Dockerised tools
 
@@ -405,23 +433,23 @@ Several of the older tools have been put into docker containers to cater for the
 
 ### Dockerised tools and Live Boot
 
-LINICS 1.01 has a firstboot service that automatically loads all docker images ready for use. However, the Live Boot creates a RAM disk which is limited in size. So Live Boot will not load all images. The purpose of the Live Boot is to try out LINICS 1.01. So this is not a bug per se. For the full functionality, you should install LINICS 1.01, preferably in a VM environment.
+LINICS 1.5 has a firstboot service that automatically loads all docker images ready for use. However, the Live Boot creates a RAM disk which is limited in size. So Live Boot will not load all images. The purpose of the Live Boot is to try out LINICS 1.5. So this is not a bug per se. For the full functionality, you should install LINICS 1.5, preferably in a VM environment.
 
 ## Bootloader issues
 
 ### Installing on a system that had another OS previously
 
-If you are installing LINICS 1.01 on a machine as its only OS, some systems do not allow the Calamares installer to write to the EFI partition. As a result the system won't boot into LINICS 1.01. Resetting the BIOS to defaults and reinstalling LINICS 1.01 should fix this issue.
+If you are installing LINICS 1.5 on a machine as its only OS, some systems do not allow the Calamares installer to write to the EFI partition. As a result the system won't boot into LINICS 1.5. Resetting the BIOS to defaults and reinstalling LINICS 1.5 should fix this issue.
 
 ### Installing alongside existing operating systems
 
-If you are installing LINICS 1.01 alongside other operating systems, GRUB's OS list sometimes does not update so you will not see LINICS 1.01 in the list of operating systems on GRUB. This is not fixed even if OS prober is on and is explicitly invoked. This can be fixed by adding a custom GRUB entry in `/etc/grub.d/40_custom` and regenerating the GRUB config. This will bring the LINICS 1.01 boot options into the GRUB menu.
+If you are installing LINICS 1.5 alongside other operating systems, GRUB's OS list sometimes does not update so you will not see LINICS 1.5 in the list of operating systems on GRUB. This is not fixed even if OS prober is on and is explicitly invoked. This can be fixed by adding a custom GRUB entry in `/etc/grub.d/40_custom` and regenerating the GRUB config. This will bring the LINICS 1.5 boot options into the GRUB menu.
 
 ## Severe issues 
 
 ### Live Boot and Bitlocker
 
-Some issues have been reported whereby just using the Live Boot USB causes issues with Bitlocker on Windows-based System leading to an inability to boot. The issues are not fatal and systems are recoverable. However, this can be time consuming. *We, therefore, advise using LINICS 1.01 in a VM environment and only using the Live USB for initial exploration or as an installation medium.* 
+Some issues have been reported whereby just using the Live Boot USB causes issues with Bitlocker on Windows-based System leading to an inability to boot. The issues are not fatal and systems are recoverable. However, this can be time consuming. *We, therefore, advise using LINICS 1.5 in a VM environment and only using the Live USB for initial exploration or as an installation medium.* 
 
 # Reporting Bugs
 
